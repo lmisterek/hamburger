@@ -1,1 +1,31 @@
-Here :)
+<div id="burger-homepage">
+  <h2 class='page-header'>Burger</h2>
+  <div class="row-fluid">
+    <div class="span3 dashbard-section-container">
+
+    <!-- Contests -->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Burger List</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id='employee-table'>
+                <thead>
+                  <tr>
+                    <th>Burger Id</th>
+                    <th>Burger Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {{#each burgers}}
+                      <tr>
+                        <td>{{this.id}}</td>
+                        <td>{{this.burger_name}}</td>
+                      </tr>
+                    {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+  </div>
