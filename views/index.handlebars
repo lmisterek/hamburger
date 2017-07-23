@@ -1,41 +1,53 @@
 <div id="burger-homepage">
-  <div class="row-fluid">
-    <div class="span3 dashbard-section-container">
 
-    <!-- Contests -->
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><strong>Burger List</strong></h3>
-            </div>
-            <div class="panel-body">
-              <table class="table table-hover" id='employee-table'>
+     <div class="parallax-container">
+      <div class="parallax"><img src="/assets/img/wideMinions.jpg"></div>
+    </div>
+
+<!--     End of Parallax -->
+  
+    <div class="container">        
+              <table class="table table-hover" id='burger-table'>
                 <thead>
                   <tr>
-                    <th>Devour It</th>
                     <th>Burger Id</th>
                     <th>Burger Name</th>
+                    <th>Devour It</th>
                   </tr>
                 </thead>
                 <tbody>
                     {{#each burgers}}
+                      {{#unless this.devoured}}
                       <tr>
-                        <td><img src="/assets/img/minion.jpeg" width=100></td>
                         <td>{{this.id}}</td>
                         <td>{{this.burger_name}}</td>
+                        <td><form action='/{{this.id}}?_method=PUT' method='POST'>
+                            <input type='hidden' name='devoured' value='true'>
+                            <button type='submit'> <img src="/assets/img/minion.jpeg" width=100></button>
+                            </form></td>
                       </tr>
-                    {{/each}}
-                       <td> <form class="create-update-form" action="/" method="POST">
-                       <button type="submit"><img src="/assets/img/minionCook.jpg" width=100></button></td>
+                      {{/unless}}
+                    {{/each}} 
+                      <tr>
+                        <td> <form class="create-update-form" action="/" method="POST">
+                            <button type="submit"><img src="/assets/img/minionCook.jpg" width=100></button></td>
                         <td></td>
                         <td> 
-                        <div class="form-group input-field col s6">
+                          <div class="form-group input-field col s6">
                           <input placeholder="Add a new Burger" name="burger_name" type="text">
-                          </form>
-                    </div></td>
+                            </form></div>
+                        </td>
                       </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
     </div>
-  </div>
+         <div class="parallax-container">
+      <div class="parallax"><img src="/assets/img/minionBottom.jpg"></div>
+    </div>
+</div>
+
+    <script>
+          $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+    </script>

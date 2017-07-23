@@ -27,17 +27,17 @@ router.post("/", function(req, res) {
 });
 
 
-// router.put("/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
+router.put("/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
 
-//   console.log("condition", condition);
+  console.log("condition", condition);
 
-//   cat.update({
-//     sleepy: req.body.sleepy
-//   }, condition, function() {
-//     res.redirect("/");
-//   });
-// });
+  burger.update({
+    devoured: req.body.devoured
+  }, condition, function() {
+    res.redirect("/");
+  });
+});
 
 
 
