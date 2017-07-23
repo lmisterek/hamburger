@@ -13,24 +13,19 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
     res.render("index",hbsObject);
   });
 
-
-
-
 });
 
-// router.post("/", function(req, res) {
-//   cat.create([
-//     "name", "sleepy"
-//   ], [
-//     req.body.name, req.body.sleepy
-//   ], function() {
-//     res.redirect("/");
-//   });
-// });
+
+router.post("/", function(req, res) {
+	console.log(req.body.burger_name);
+  burger.create(["burger_name"], [req.body.burger_name], function() {
+    res.redirect("/");
+  });
+});
+
 
 // router.put("/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;

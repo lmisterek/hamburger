@@ -19,14 +19,19 @@
                 <tbody>
                     {{#each burgers}}
                       <tr>
-                        <td><img src="/assets/img/burger.jpeg" width=30></td>
+                        <td><img src="/assets/img/minion.jpeg" width=100></td>
                         <td>{{this.id}}</td>
                         <td>{{this.burger_name}}</td>
                       </tr>
                     {{/each}}
-                       <td><img src="/assets/img/burger.jpeg" width=30></td>
+                       <td> <form class="create-update-form" action="/" method="POST">
+                       <button type="submit"><img src="/assets/img/minionCook.jpg" width=100></button></td>
                         <td></td>
-                        <td></td>
+                        <td> 
+                        <div class="form-group input-field col s6">
+                          <input placeholder="Add a new Burger" name="burger_name" type="text">
+                          </form>
+                    </div></td>
                       </tr>
                 </tbody>
               </table>
