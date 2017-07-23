@@ -12,6 +12,7 @@
               <table class="table table-hover" id='employee-table'>
                 <thead>
                   <tr>
+                    <th>Devour It</th>
                     <th>Burger Id</th>
                     <th>Burger Name</th>
                   </tr>
@@ -19,10 +20,15 @@
                 <tbody>
                     {{#each burgers}}
                       <tr>
+                        <td><img src="/assets/img/burger.jpeg" width=30></td>
                         <td>{{this.id}}</td>
                         <td>{{this.burger_name}}</td>
                       </tr>
                     {{/each}}
+                       <td><img src="/assets/img/burger.jpeg" width=30></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
                 </tbody>
               </table>
             </div>
